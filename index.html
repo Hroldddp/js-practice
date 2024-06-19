@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style>
+            body {
+                background-color: black;
+                font-family: Arial;
+                color: white;
+            }
+
+            button {
+                background-color: #333;
+                color: white;
+            }
+        </style>
+        <title>Cart</title>
+    </head>
+    <body>
+        <h3>Buy Genshin Primogems (REAL)</h3>
+        <button onclick="
+            document.getElementById('quantity').innerText = `Quantity: ${cartQuantity}`;
+        ">Show cart</button>
+        <button onclick="
+            cartQuantity = cartQuantity + 1;
+            document.getElementById('quantity').innerText = `Quantity: ${cartQuantity}`;
+        ">Add to cart</button>
+        <button onclick="
+            if (cartQuantity > 0) {
+                cartQuantity = cartQuantity - 1;
+                document.getElementById('quantity').innerText = `Quantity: ${cartQuantity}`;
+            }
+
+            else if (cartQuantity <= 0) {
+                cartQuantity = 0;
+                document.getElementById('quantity').innerText = 'Quantity: 0';
+            }
+        ">-1</button>
+        <button onclick="
+        cartQuantity = cartQuantity + 2;
+        document.getElementById('quantity').innerText = `Quantity: ${cartQuantity}`;
+        ">+2</button>
+        <button onclick="
+        cartQuantity = 0;
+        document.getElementById('quantity').innerText = `Removed all items ${cartQuantity}`;
+        ">Remove all items</button>
+        <p id="quantity">Quantity: 0</p>
+        <script>
+            let cartQuantity = 0;
+        </script>
+    </body>
+</html>
